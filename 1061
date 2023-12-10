@@ -1,0 +1,43 @@
+#include <stdio.h>
+
+struct Tempo {
+    int dias,horas,minutos, segundos;
+};
+
+int main() {
+    char inicio_descricao[4], fim_descricao[4];
+    int diaInicio, horaInicio, minutoInicio, segundoInicio;
+    int diaFim, horaFim, minutoFim, segundoFim;
+
+    scanf("%s %d", inicio_descricao, &diaInicio);
+    scanf("%d : %d : %d", &horaInicio, &minutoInicio, &segundoInicio);
+
+    scanf("%s %d", fim_descricao, &diaFim);
+    scanf("%d : %d : %d", &horaFim, &minutoFim, &segundoFim);
+
+    struct Tempo diferenca;
+    diferenca.dias = diaFim - diaInicio;
+    diferenca.horas = horaFim - horaInicio;
+    diferenca.minutos = minutoFim - minutoInicio;
+    diferenca.segundos = segundoFim - segundoInicio;
+
+    if (diferenca.segundos < 0) {
+        diferenca.segundos += 60;
+        diferenca.minutos--;
+    }
+    if (diferenca.minutos < 0) {
+        diferenca.minutos += 60;
+        diferenca.horas--;
+    }
+    if (diferenca.horas < 0) {
+        diferenca.horas += 24;
+        diferenca.dias--;
+    }
+
+    printf("%d dia(s)\n", diferenca.dias);
+    printf("%d hora(s)\n", diferenca.horas);
+    printf("%d minuto(s)\n", diferenca.minutos);
+    printf("%d segundo(s)\n", diferenca.segundos);
+
+    return 0;
+}
