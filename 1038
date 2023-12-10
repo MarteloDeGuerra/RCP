@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+int main() {
+    int codigoProduto, quant;
+    double valorTotal;
+
+    scanf("%d %d", &codigoProduto, &quant);
+
+    switch (codigoProduto) {
+        case 1:
+            valorTotal = quant * 4.00;
+            break;
+        case 2:
+            valorTotal = quant * 4.50;
+            break;
+        case 3:
+            valorTotal = quant * 5.00;
+            break;
+        case 4:
+            valorTotal = quant * 2.00;
+            break;
+        case 5:
+            valorTotal = quant * 1.50;
+            break;
+        default:
+            printf("Código de produto inválido\n");
+            return 1;
+    }
+
+    printf("Total: R$ %.2f\n", valorTotal);
+
+    return 0;
+}
