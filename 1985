@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+int main() {
+    int codigo, quantidade, produtosComprados;
+    double valorTotal = 0.0;
+
+    scanf("%d", &produtosComprados);
+
+    while (produtosComprados--) {
+        scanf("%d %d", &codigo, &quantidade);
+
+        switch (codigo) {
+            case 1001:
+                valorTotal += 1.50 * quantidade;
+                break;
+            case 1002:
+                valorTotal += 2.50 * quantidade;
+                break;
+            case 1003:
+                valorTotal += 3.50 * quantidade;
+                break;
+            case 1004:
+                valorTotal += 4.50 * quantidade;
+                break;
+            case 1005:
+                valorTotal += 5.50 * quantidade;
+                break;
+            default:
+                printf("Código de produto inválido\n");
+                return 1;
+        }
+    }
+    printf("%.2f\n", valorTotal);
+
+    return 0;
+}
