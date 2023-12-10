@@ -1,0 +1,15 @@
+#include <stdio.h>
+
+int main() {
+    int casos;
+    int termos;
+
+    scanf("%d", &casos);
+
+    while (casos--) {
+        scanf("%d", &termos);
+        int resultado = termos % 2 == 0 ? 0 : 1;
+        printf("%d\n", resultado);
+    }
+    return 0;
+}
