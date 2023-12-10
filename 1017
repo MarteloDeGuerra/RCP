@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main() {
+    int tempViagem, veloMedia;
+
+    scanf("%d", &tempViagem);
+
+    scanf("%d", &veloMedia);
+
+    double distancia = tempViagem * veloMedia;
+
+    double consumoLitros = distancia / 12.0;
+
+    printf("%.3lf\n", consumoLitros);
+
+    return 0;
+}
